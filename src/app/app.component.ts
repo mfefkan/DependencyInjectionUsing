@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { ProductService } from './productservice';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: ``,
+  /* providers: [ProductService]
+ Buradaki gibi de provide edebiliriz bu şekilde sadece app.component.ts için provide edilmiş olacaktır.
+  */
 })
 export class AppComponent {
-  title = 'DependencyInjectionUsing';
+  constructor(private productService:ProductService){
+    console.log(productService.getProducts());
+    
+  }
 }
