@@ -1,16 +1,23 @@
 import { Component, Inject, inject } from '@angular/core';
 import { ProductService } from './productservice';
 import { productServiceIT } from './injection-token';
+import { RandomService } from './random.service';
 
 @Component({
   selector: 'app-root',
-  template: ``,
+  template: `
+  
+  AppComponent => {{randomService.random}}
+  <br>
+  <app-a></app-a>
+  `,
+  providers: []
   /* providers: [ProductService]
  Buradaki gibi de provide edebiliriz bu şekilde sadece app.component.ts için provide edilmiş olacaktır.
   */ 
 })
 export class AppComponent {
-  constructor(@Inject("productService") private productService:ProductService){
+  constructor(@Inject("productService") private productService:ProductService,public randomService: RandomService){
  console.log(productService.getProducts());
  
   }

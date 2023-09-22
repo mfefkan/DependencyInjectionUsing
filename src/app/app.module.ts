@@ -7,9 +7,11 @@ import { ProductService } from './productservice';
 import { productServiceIT } from './injection-token';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { AComponent } from './a.component';
+import { BComponent } from './b.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AComponent, BComponent],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule],
   providers: [
     // {provide : ProductService, useClass:ProductService} Type token
